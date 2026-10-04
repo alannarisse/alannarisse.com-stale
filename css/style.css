@@ -22,7 +22,7 @@ html {
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
-  font-size:20px;
+  font-size: 20px;
   color: #333;
 }
 
@@ -33,7 +33,7 @@ h4,
 h5 {
   font-family: 'Josephine Sans', sans-serif;
   font-weight: 700;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -46,8 +46,8 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
-  line-height:4.6rem;
+  font-size: 3.3rem;
+  line-height: 3.8rem;
 }
 
 h3 {
@@ -56,7 +56,11 @@ h3 {
 
 a {
   color: #388cb0;
-  text-decoration: none;
+  /* text-decoration: underline; */
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .4rem;
+
 }
 
 a:hover {
@@ -78,15 +82,51 @@ section {
   padding-bottom: 4em;
 }
 
+section.tunnel-section {
+  padding: 0;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+}
+
+section.tunnel-section img {
+  animation: rotate 6s linear infinite;
+  position: relative;
+  transform-origin: 50% 50%;
+  margin: -50% 0 0 -100%;
+  height: 300vh;
+  opacity: 90%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+section.tunnel-section h2.mystery {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  width: 100%;
+  color: #fff;
+}
+
 header {
   padding-top: 35vh;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   background-image: url('../assets/banners/kiwihug-MS9Tnh3if1o-unsplash.jpg');
   background-size: 100%;
-  background-position:50%;
+  background-position: 50%;
   background-repeat: no-repeat;
-  background-color:#DADADA;
+  background-color: #DADADA;
 }
 
 header h1 {
@@ -109,16 +149,14 @@ header .me img {
 }
 
 header h2 {
-  font-weight: 400;
-  line-height: 1.4em;
-  font-size: .65em;
-  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  line-height: 2.1rem;
+  font-size: 1.6rem;
+  font-family: 'Josefine', sans-serif;
 }
 
 header .name {
   flex: 55%;
-  font-size: 48px;
-
   margin-bottom: 0;
 }
 
@@ -133,11 +171,21 @@ li {
   grid-row-gap: 3em;
 }
 
+.wave {
+  width: 100%;
+  margin-bottom: -3px;
+}
+
 .teach-section {
-  background: #000;
+  /* background: #000; */
+  background-color: #83b9d0;
   color: #fff;
   padding-bottom: 130px;
   margin-bottom: 0;
+}
+
+.intro {
+  margin-bottom: 2rem;
 }
 
 .nice-things {
@@ -147,7 +195,7 @@ li {
   background: #c7c7c7;
   display: flex;
   align-items: center;
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 .nice-things .testimonial {
@@ -169,6 +217,16 @@ li {
 
 .web-section {
   margin-bottom: 0;
+  color: #fff;
+}
+
+.web-section a {
+  color: #bae1f1;
+}
+
+.web-section img {
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .grid img {
@@ -180,7 +238,7 @@ li {
 .sect-head {
   grid-column: 1 / -1;
   grid-row-gap: 0;
-  margin-top: 2em;
+  margin-top: 1rem;
 }
 
 
@@ -210,12 +268,22 @@ article {
 }
 
 .web-section {
-  background-color: #83b9d0;
+  /* background-color: #83b9d0; */
+  background-color: #000;
+  color: #fff;
 }
 
 .design-section {
   background-color: #d0ce83;
   min-height: 100vh;
+}
+
+.design-section img {
+  width: 100%;
+}
+
+.rr {
+  height: 80%;
 }
 
 /* FOOTER */
@@ -233,13 +301,17 @@ footer li {
   width: 36px;
 }
 
+.marleft {
+  margin-left: 1rem;
+}
+
 /* Topnav from W3Schools */
 .topnav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index:2;
+  z-index: 2;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -251,7 +323,7 @@ footer li {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, rgba(51, 65, 71, 1) 0%, rgba(124, 124, 106, 1) 64%, rgba(217, 216, 195, 1) 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, rgba(51, 65, 71, 1) 0%, rgba(124, 124, 106, 1) 64%, rgba(217, 216, 195, 1) 100%);
+  background: linear-gradient(135deg, rgb(184, 217, 232) 0%, rgb(243, 243, 202) 64%, rgb(226, 226, 214) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#334147', endColorstr='#d9d8c3', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
@@ -259,11 +331,12 @@ footer li {
 
 .topnav a {
   display: block;
-  color: #f2f2f2;
+  color: #333;
   text-align: center;
   padding: 17px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: .9rem;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .topnav .dropdown .drop-parent {
@@ -293,7 +366,7 @@ footer li {
 }
 
 .dropdown .dropbtn {
-  font-size: 17px;
+  font-size: .9rem;
   border: none;
   outline: none;
   color: white;
@@ -321,8 +394,7 @@ footer li {
 
 .topnav a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
+  border: 1px solid #555;
 }
 
 .dropdown-content a:hover {
@@ -343,11 +415,17 @@ footer li {
 }
 
 @media screen and (max-width: 768px) {
+
   section,
   header,
   footer ul {
     padding: 1em;
   }
+
+  .marleft {
+    margin-left: .2rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
@@ -372,19 +450,22 @@ footer li {
   header {
     flex-direction: column;
     padding-top: 150px;
-    background-image:none;
-    background-color:#DADADA;
+    background-image: none;
+    background-color: #DADADA;
   }
-header .me {
-  flex: 0;
 
-}
-.teach-section {
-  padding-bottom: 40px;
-}
+  header .me {
+    flex: 0;
+
+  }
+
+  .teach-section {
+    padding-bottom: 40px;
+  }
+
   .topnav a:not(:first-child),
   .dropdown .dropbtn {
-    font-size: 12px;
+    font-size: .9rem;
     padding: 12px;
   }
 
@@ -397,20 +478,51 @@ header .me {
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 1.6rem;
     margin-top: 1em;
   }
+
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
   header {
-    min-height:auto;
+    min-height: auto;
   }
+
   header .me {
-    text-align:center;
+    text-align: center;
   }
+
   header h2 {
-    font-size: .4em;
+    font-size: .9em;
   }
+
   .nice-things {
-    font-size: 20px;
+    font-size: 1rem;
+  }
+
+  .wave {
+    display: none;
+  }
+
+  .rr {
+    height: auto;
+  }
+
+  section.tunnel-section {
+    height: 60vh;
+  }
+
+  section.tunnel-section img {
+    animation: none;
+    opacity: 90%;
+    height: auto;
+    position: relative;
+    transform-origin: 50% 50%;
+    margin: -50% 0 0 -170%;
+
   }
 }
 
